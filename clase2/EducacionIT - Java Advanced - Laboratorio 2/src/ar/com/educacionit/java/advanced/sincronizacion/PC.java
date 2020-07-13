@@ -11,9 +11,12 @@ package ar.com.educacionit.java.advanced.sincronizacion;
  */
 public class PC {
     public static void main(String args[]) {
-        Q q = new Q();
-        new Producer(q);
-        new Consumer(q);
-        System.out.println("Press Control-C to stop.");
+        Data data = new Data();
+        new Producer(data, "P1");
+        new Producer(data, "P2");
+        new Producer(data, "P3");
+        
+        new Consumer(data, "C1");
+        new Consumer(data, "C2");
     }
 }

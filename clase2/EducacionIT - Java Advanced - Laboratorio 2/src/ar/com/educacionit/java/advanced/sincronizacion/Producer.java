@@ -10,15 +10,16 @@ package ar.com.educacionit.java.advanced.sincronizacion;
  * @author Instructor
  */
 public class Producer implements Runnable {
-    public Q q;
-    public Producer(Q q) {
-        this.q = q;
-        new Thread(this, "Producer").start();
+    private Data data;
+    private String name;
+    public Producer(Data data, String name) {
+        this.data = data;
+        this.name = name;
+        new Thread(this, "Producer-" + name).start();
     }
     public void run() {
-        int i = 0;
         while(true) {
-            q.put(i++);
+            data.put(this.name);
         }
     }
 }

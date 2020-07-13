@@ -10,16 +10,18 @@ package ar.com.educacionit.java.advanced.sincronizacion;
  * @author Instructor
  */
 public class Consumer implements Runnable {
-    private Q q;
+    private Data data;
+    private String name;
 
-    public  Consumer(Q q) {
-        this.q = q;
-        new Thread(this, "Consumer").start();
+    public  Consumer(Data data, String threadName) {
+        this.data = data;
+        this.name = threadName;
+        new Thread(this, "Consumer-" + threadName).start();
     }
     
     public void run() {
         while(true) {
-            q.get();
+            data.get(name);
         }
     }
 }

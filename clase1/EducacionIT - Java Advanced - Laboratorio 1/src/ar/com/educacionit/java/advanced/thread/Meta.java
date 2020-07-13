@@ -39,7 +39,7 @@ public class Meta {
 
     public void posiciones() {
         for (Caballo c : llegados) {
-            System.out.println(c);
+            System.out.println(c.getNombre());
         }
     }
 
