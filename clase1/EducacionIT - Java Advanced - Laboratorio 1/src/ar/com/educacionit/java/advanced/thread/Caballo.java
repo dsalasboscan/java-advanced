@@ -46,7 +46,10 @@ public class Caballo extends Thread {
         while (incremento == 0) {
             incremento = (int) ((Math.random() * 10) + (Math.random() * 5));
         }
+        
         posicion += incremento;
+        
+        
         if (((int) (Math.random() * 10)) == 3) {
             posicion += 10;
         }

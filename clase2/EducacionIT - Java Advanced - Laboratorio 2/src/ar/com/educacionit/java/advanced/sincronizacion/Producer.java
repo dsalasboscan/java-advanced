@@ -12,6 +12,7 @@ package ar.com.educacionit.java.advanced.sincronizacion;
 public class Producer implements Runnable {
     private Data data;
     private String name;
+    
     public Producer(Data data, String name) {
         this.data = data;
         this.name = name;

@@ -20,7 +20,7 @@ public class Data {
     public synchronized int get(String threadName) {
         while(transfer) {
             try {
-                wait();
+                wait(5000);
             } catch(InterruptedException e) {
                 System.out.println("InterruptedException caught");
             }
