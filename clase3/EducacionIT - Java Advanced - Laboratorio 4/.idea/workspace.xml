@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d75eae09-5c0d-49ce-bfe6-5588c567d7d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/src/ar/com/educacionit/java/advanced/thread/Caballo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/src/ar/com/educacionit/java/advanced/thread/Caballo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/src/ar/com/educacionit/java/advanced/thread/Hipodromo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase1/EducacionIT - Java Advanced - Laboratorio 1/src/ar/com/educacionit/java/advanced/thread/Hipodromo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 2/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 2/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 2/src/ar/com/educacionit/java/advanced/sincronizacion/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 2/src/ar/com/educacionit/java/advanced/sincronizacion/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 2/src/ar/com/educacionit/java/advanced/sincronizacion/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 2/src/ar/com/educacionit/java/advanced/sincronizacion/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 3/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 3/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 3/src/ar/com/educacionit/java/advanced/thread/CounterForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 3/src/ar/com/educacionit/java/advanced/thread/CounterForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 3/src/ar/com/educacionit/java/advanced/thread/CounterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase2/EducacionIT - Java Advanced - Laboratorio 3/src/ar/com/educacionit/java/advanced/thread/CounterForm.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ev4B5oBq9zA8kbTZZsdzsTpoGm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="1172" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EducacionIT - Java Advanced - Tutorial Sockets TCP" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d75eae09-5c0d-49ce-bfe6-5588c567d7d5" name="Default Changelist" comment="" />
+      <created>1595188593397</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595188593397</updated>
+      <workItem from="1595188595860" duration="152000" />
+      <workItem from="1595189166117" duration="4519000" />
+      <workItem from="1595277909501" duration="6876000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595188745282">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595188745282" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ar/com/educacionit/java/advanced/chat/ChatGUI.java</url>
+          <line>347</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ar/com/educacionit/java/advanced/chat/ChatGUI.java</url>
+          <line>348</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
