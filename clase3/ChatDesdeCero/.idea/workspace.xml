@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d75eae09-5c0d-49ce-bfe6-5588c567d7d5" name="Default Changelist" comment="">
+    <list default="true" id="8c412854-4eb7-40d7-b124-60e49d467d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/manifest.mf" beforeDir="false" />
@@ -22,8 +22,8 @@
       <change beforePath="$PROJECT_DIR$/../../clase2/JavaApplication4/src/javaapplication4/NewJFrame.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../clase2/JavaApplication4/src/javaapplication4/NewJFrame.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ChatDeCero/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/nbproject/private/private.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,62 +33,46 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1ev4B5oBq9zA8kbTZZsdzsTpoGm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1fEJz22y7pfY4PgoKhdPx9FPsJn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="1172" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChatDesdeCero" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d75eae09-5c0d-49ce-bfe6-5588c567d7d5" name="Default Changelist" comment="" />
-      <created>1595188593397</created>
+      <changelist id="8c412854-4eb7-40d7-b124-60e49d467d7b" name="Default Changelist" comment="" />
+      <created>1595777576534</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595188593397</updated>
-      <workItem from="1595188595860" duration="152000" />
-      <workItem from="1595189166117" duration="4519000" />
-      <workItem from="1595277909501" duration="8075000" />
-      <workItem from="1595772555023" duration="3344000" />
+      <updated>1595777576534</updated>
+      <workItem from="1595777577645" duration="179000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="735" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595777572779">
+    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595777743272">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="735" y="310" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/3840.36.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1595777572779" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595188745282" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ar/com/educacionit/java/advanced/chat/ChatGUI.java</url>
-          <line>347</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ar/com/educacionit/java/advanced/chat/ChatGUI.java</url>
-          <line>348</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/3840.36.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1595777743272" />
   </component>
 </project>
