@@ -5,6 +5,9 @@
  */
 package chatdesdecero;
 
+import java.io.File;
+import javax.swing.JLabel;
+
 /**
  *
  * @author david.salas
@@ -15,7 +18,25 @@ public class StartChat {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ChatGUI gui = new ChatGUI();
+        
+        int messagePort = 5000;
+        int filePort = messagePort + 1;
+        
+        gui.setTitle("message port: " + messagePort + " filePort: " + filePort);
+        
+        
+        MessageListener listener = new MessageListener(gui, messagePort);
+        Thread t1 = new Thread(listener);
+        t1.start();
+        
+        FileListener fileListener = new FileListener(gui, filePort);
+        Thread t2 = new Thread(fileListener);
+        t2.start();
+        
+        gui.setVisible(true);
+        
+        
     }
     
 }

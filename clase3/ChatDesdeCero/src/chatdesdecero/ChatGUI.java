@@ -5,19 +5,40 @@
  */
 package chatdesdecero;
 
+import java.io.File;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author david.salas
  */
 public class ChatGUI extends javax.swing.JFrame {
 
+    private DefaultListModel<Contact> modeloContactos = new DefaultListModel();
+    
     /**
      * Creates new form ChatGUI
      */
     public ChatGUI() {
         initComponents();
+        listContactos.setModel(modeloContactos);
     }
 
+    public JTextArea getTextAreaIncommingMsg() {
+        return textAreaIncommingMsg;
+    }
+
+    public void setLabelClientAddress(JLabel labelClientAddress) {
+        this.labelClientAddress = labelClientAddress;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +65,8 @@ public class ChatGUI extends javax.swing.JFrame {
         buttonSendFile = new javax.swing.JButton();
         labelIncommingMessages = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textAreaIncommingMsg = new javax.swing.JTextArea();
+        labelClientAddress = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,16 +92,26 @@ public class ChatGUI extends javax.swing.JFrame {
         labelContactList.setText("Lista de contactos");
 
         buttonSend.setText("Send");
+        buttonSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSendActionPerformed(evt);
+            }
+        });
 
         buttonClear.setText("Clear");
 
         buttonSendFile.setText("Send File");
+        buttonSendFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSendFileActionPerformed(evt);
+            }
+        });
 
         labelIncommingMessages.setText("Incomming messages");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        textAreaIncommingMsg.setColumns(20);
+        textAreaIncommingMsg.setRows(5);
+        jScrollPane3.setViewportView(textAreaIncommingMsg);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,54 +139,55 @@ public class ChatGUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelSendMessage)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelIncommingMessages)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(buttonSend)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buttonSendFile)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buttonClear)
-                                .addGap(36, 36, 36)
-                                .addComponent(labelStatus))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelIncommingMessages)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(buttonSend)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(buttonSendFile)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(buttonClear)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(labelStatus))
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(labelClientAddress))
                         .addGap(0, 16, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(labelClientAddress)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelHost)
-                                    .addComponent(textFieldHost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(textFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelPort))
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonAddContact)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelContactList))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelSendMessage)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelHost)
+                            .addComponent(textFieldHost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelPort))
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonAddContact)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelContactList))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
+                        .addComponent(labelSendMessage)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(166, 166, 166)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(labelStatus)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(labelStatus))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonSend)
                             .addComponent(buttonSendFile)
@@ -170,8 +203,40 @@ public class ChatGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAddContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddContactActionPerformed
-        
+        try {
+            Contact contact = new Contact();
+            contact.setInetAddress(InetAddress.getByName(textFieldHost.getText()));
+            contact.setPort(Integer.parseInt(textFieldPort.getText()));
+            modeloContactos.addElement(contact);
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(ChatGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_buttonAddContactActionPerformed
+
+    private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSendActionPerformed
+        Contact contact = (Contact) listContactos.getSelectedValue();
+        
+        if (contact != null) {
+            MessageSender messageSender = new MessageSender(contact, labelStatus, textAreaSendMessage.getText());
+            messageSender.start();
+        } else {
+            labelStatus.setText("Seleccione un contacto!");
+        }
+    }//GEN-LAST:event_buttonSendActionPerformed
+
+    private void buttonSendFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSendFileActionPerformed
+        JFileChooser fc = new JFileChooser();
+        int returnVal = fc.showOpenDialog(this);
+        
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = fc.getSelectedFile();
+            Contact contact = (Contact) listContactos.getSelectedValue();
+            if (contact != null) {
+                FileSender filesender = new FileSender(contact, labelStatus, file);
+                filesender.start();
+            }
+        }
+    }//GEN-LAST:event_buttonSendFileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,14 +281,15 @@ public class ChatGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel labelClientAddress;
     private javax.swing.JLabel labelContactList;
     private javax.swing.JLabel labelHost;
     private javax.swing.JLabel labelIncommingMessages;
     private javax.swing.JLabel labelPort;
     private javax.swing.JLabel labelSendMessage;
     private javax.swing.JLabel labelStatus;
-    private javax.swing.JList<String> listContactos;
+    private javax.swing.JList<Contact> listContactos;
+    private javax.swing.JTextArea textAreaIncommingMsg;
     private javax.swing.JTextArea textAreaSendMessage;
     private javax.swing.JTextField textFieldHost;
     private javax.swing.JTextField textFieldPort;

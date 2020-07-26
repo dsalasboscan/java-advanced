@@ -8,6 +8,8 @@ package chatdesdecero;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,8 +27,9 @@ public class MessageListener implements Runnable {
     
     @Override
     public void run() {
+        ServerSocket server = null;
         try {
-            ServerSocket server = new ServerSocket(port);
+            server = new ServerSocket(port);
             
             while(true) {
                 System.out.println("Aceptando conexiones...");
@@ -34,10 +37,16 @@ public class MessageListener implements Runnable {
                 System.out.println("Nueva conexion desde: " + client.getInetAddress());
                 handle(client);
             }
-            
-            
         } catch (IOException e) {
             System.out.println("No se pudo iniciar el servidor, mensaje exception: " + e.getMessage());
+        } finally {
+            if (server != null) {
+                try {
+                    server.close();
+                } catch (IOException ex) {
+                    System.out.println("Conexión ya cerrada");
+                }
+            }
         }
     }
     

@@ -25,22 +25,33 @@ class FileListener implements Runnable {
 
     @Override
     public void run() {
+        ServerSocket server = null;
         try {
-            ServerSocket server = new ServerSocket(port);
+            server = new ServerSocket(port);
             
             while(true) {
                 System.out.println("Aceptando conexiones");
                 Socket client = server.accept();
                 System.out.println("Nueva conexion desde: " + client.getInetAddress());
+                handle(client);
             }
             
         } catch(IOException e) {
             System.out.println(e.getMessage());
+        } finally {
+            if (server != null) {
+                try {
+                    server.close();
+                } catch (IOException ex) {
+                    System.out.println("Conexión ya cerrada");
+                }
+            }
         }
     }
     
     private void handle(Socket client) {
         Thread t = new FileHandler(gui, client);
+        t.start();
     }
     
 }
