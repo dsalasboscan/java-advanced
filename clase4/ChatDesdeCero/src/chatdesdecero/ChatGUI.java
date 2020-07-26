@@ -106,6 +106,11 @@ public class ChatGUI extends javax.swing.JFrame {
         });
 
         buttonClear.setText("Clear");
+        buttonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonClearActionPerformed(evt);
+            }
+        });
 
         buttonSendFile.setText("Send File");
         buttonSendFile.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +253,12 @@ public class ChatGUI extends javax.swing.JFrame {
     private void listContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listContactosMouseClicked
         
     }//GEN-LAST:event_listContactosMouseClicked
+
+    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClearActionPerformed
+        textAreaIncommingMsg.setText("");
+        labelStatus.setForeground(new java.awt.Color(102, 255, 51));
+        labelStatus.setText("Envie un mensaje ...");
+    }//GEN-LAST:event_buttonClearActionPerformed
 
     /**
      * @param args the command line arguments
