@@ -3,27 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c412854-4eb7-40d7-b124-60e49d467d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/ChatGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/ChatGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/FileHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/FileListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/MessageHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/MessageListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/ChatDesdeCero/src/chatdesdecero/StartChat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/EjercicioTcp/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/EjercicioTcp/src/ejerciciotcp/MinimoServidor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/JavaApplication4/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/JavaApplication4/src/javaapplication4/NewJFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../clase2/JavaApplication4/src/javaapplication4/NewJFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChatDeCero/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EducacionIT - Java Advanced - Laboratorio 4/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../clase4/ChatDesdeCero/src/chatdesdecero/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../clase4/ChatDesdeCero/src/chatdesdecero/MessageSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +28,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../clase4/EducacionIT - Java Advanced - Laboratorio 5" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -60,6 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595777576534</updated>
       <workItem from="1595777577645" duration="179000" />
+      <workItem from="1595778451882" duration="699000" />
     </task>
     <servers />
   </component>
@@ -70,9 +53,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595777743272">
+    <state x="100" y="98" width="1720" height="882" key="DiffContextDialog" timestamp="1595780503974">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/3840.36.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1595777743272" />
+    <state x="100" y="98" width="1720" height="882" key="DiffContextDialog/1920.0.1920.1080/3840.36.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1595780503974" />
+    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595780761185">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/3840.36.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1595780761185" />
   </component>
 </project>

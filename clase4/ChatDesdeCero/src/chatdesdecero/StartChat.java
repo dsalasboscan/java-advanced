@@ -20,7 +20,7 @@ public class StartChat {
     public static void main(String[] args) {
         ChatGUI gui = new ChatGUI();
         
-        int messagePort = 5000;
+        int messagePort = 5004; // Always increment by two (5000, 5002, 5004, 5006... etc)
         int filePort = messagePort + 1;
         
         gui.setTitle("message port: " + messagePort + " filePort: " + filePort);
@@ -33,6 +33,12 @@ public class StartChat {
         FileListener fileListener = new FileListener(gui, filePort);
         Thread t2 = new Thread(fileListener);
         t2.start();
+        
+        Thread t3 = new Thread(new ContactsBroadcast(messagePort));
+        t3.start();
+         
+        Thread t4 = new Thread(new ContactsListeners(gui.getModeloContactos(), messagePort));
+        t4.start();
         
         gui.setVisible(true);
         

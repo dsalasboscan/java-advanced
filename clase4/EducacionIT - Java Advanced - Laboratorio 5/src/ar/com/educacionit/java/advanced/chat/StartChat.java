@@ -16,11 +16,11 @@ public class StartChat {
      */
     public static void main(String[] args) {        
         ChatGUI gui= new ChatGUI();
-        MessageListener listener = new MessageListener(gui,5000);
+        MessageListener listener = new MessageListener(gui,5002);
         Thread t = new Thread(listener);
         t.start();
 
-        FileListener fileListener = new FileListener(gui,5001);
+        FileListener fileListener = new FileListener(gui,5003);
         Thread t4 = new Thread(fileListener);
         t4.start();
 

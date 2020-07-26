@@ -5,14 +5,12 @@
  */
 package chatdesdecero;
 
-import com.sun.istack.internal.logging.Logger;
 import java.awt.Color;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.logging.Level;
 import javax.swing.JLabel;
-import sun.util.logging.PlatformLogger;
 
 /**
  *

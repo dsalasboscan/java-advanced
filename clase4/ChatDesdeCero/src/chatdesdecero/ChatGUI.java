@@ -35,10 +35,12 @@ public class ChatGUI extends javax.swing.JFrame {
         return textAreaIncommingMsg;
     }
 
-    public void setLabelClientAddress(JLabel labelClientAddress) {
-        this.labelClientAddress = labelClientAddress;
+    public DefaultListModel<Contact> getModeloContactos() {
+        return modeloContactos;
     }
     
+    
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,6 +83,11 @@ public class ChatGUI extends javax.swing.JFrame {
             }
         });
 
+        listContactos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listContactosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(listContactos);
 
         labelSendMessage.setText("text");
@@ -237,6 +244,10 @@ public class ChatGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_buttonSendFileActionPerformed
+
+    private void listContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listContactosMouseClicked
+        
+    }//GEN-LAST:event_listContactosMouseClicked
 
     /**
      * @param args the command line arguments
