@@ -11,36 +11,37 @@ import java.net.Socket;
 
 /**
  *
- * @author david.salas
+ * @author diego
  */
 class FileListener implements Runnable {
-    
     private ChatGUI gui;
     private int port;
     
-    public FileListener(ChatGUI gui, int port) {
+    public FileListener(ChatGUI gui, int port){
         this.gui = gui;
         this.port = port;
     }
+ private void handle(Socket client){
+        Thread t = new FileHandler(client, gui);
+        t.start();
+    }
+    
 
+    
     @Override
-    public void run() {
+    public void run(){
         try {
-            ServerSocket server = new ServerSocket(port);
-            
-            while(true) {
-                System.out.println("Aceptando conexiones");
-                Socket client = server.accept();
-                System.out.println("Nueva conexion desde: " + client.getInetAddress());
-            }
-            
-        } catch(IOException e) {
+              ServerSocket server = new ServerSocket(port);
+              
+              while(true){
+                  System.out.println("Aceptando conexiones...");
+                  Socket client = server.accept();
+                  System.out.println("Nueva conexion desde : " + client.getInetAddress());
+                       
+              }
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
-    
-    private void handle(Socket client) {
-        Thread t = new FileHandler(gui, client);
-    }
-    
+   
 }

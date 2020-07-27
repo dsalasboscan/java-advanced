@@ -8,33 +8,37 @@ package chatdesdecero;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author david.salas
+ * @author diego
  */
 public class MessageHandler extends Thread {
-
+    
     private Socket client;
     private ChatGUI gui;
-    
-    public MessageHandler(Socket client, ChatGUI gui) {
+
+    public MessageHandler(Socket client, ChatGUI  gui) {
         this.client = client;
         this.gui = gui;
     }
     
-    public void run() {
-        try {
+    @Override
+    public void run(){
+        try{
             DataInputStream dis = new DataInputStream(client.getInputStream());
-            String msg = "." + client.getInetAddress() + ":" + client.getPort() + " -> " + dis.readUTF();
+            String msg = "." + client.getInetAddress() + ":" + client.getPort() + " -> " 
+                   +dis.readUTF();
             System.out.println(msg);
             gui.getTextAreaIncommingMsg().append(msg + "\n");
             dis.close();
             client.close();
             
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        }catch(IOException err){
+            System.out.println("" + err.getMessage());
         }
-    }
-    
+   
+        }
 }

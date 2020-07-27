@@ -11,39 +11,41 @@ import java.net.Socket;
 
 /**
  *
- * @author david.salas
+ * @author diego
  */
 public class MessageListener implements Runnable {
-
+    
     private ChatGUI gui;
     private int port;
     
-    public MessageListener(ChatGUI gui, int port) {
-        this.gui = gui;
-        this.port = port;
+    public MessageListener( ChatGUI gui, int port){
+    this.gui = gui;
+    this.port = port;
     }
-    
-    @Override
-    public void run() {
-        try {
-            ServerSocket server = new ServerSocket(port);
-            
-            while(true) {
-                System.out.println("Aceptando conexiones...");
-                Socket client = server.accept();
-                System.out.println("Nueva conexion desde: " + client.getInetAddress());
-                handle(client);
-            }
-            
-            
-        } catch (IOException e) {
-            System.out.println("No se pudo iniciar el servidor, mensaje exception: " + e.getMessage());
-        }
-    }
-    
-    private void handle(Socket client) {
-        Thread t = new MessageHandler(client, gui);
-        t.start();
-    }
+      
+  private void handle(Socket client){
+   Thread t = new MessageHandler(client, gui);
+   t.start();
+  }
+        
+  @Override
+  public void run(){
+      try{
+          ServerSocket server = new ServerSocket(port);
+          
+          while(true){
+              System.out.println(".aceptando conexiones...");
+              Socket client = server.accept();
+              System.out.println(".Nueva conexion desde:" + client.getInetAddress() );
+              handle(client);
+          }
+      }catch(IOException err){
+      System.out.println("no se pudo iniciar el servidor, mensaje : "
+              + err.getMessage());
+  }
+       
+     
+  }
+
     
 }

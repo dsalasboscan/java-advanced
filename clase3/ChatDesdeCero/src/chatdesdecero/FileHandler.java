@@ -14,26 +14,24 @@ import javax.swing.JFileChooser;
 
 /**
  *
- * @author david.salas
+ * @author diego
  */
 public class FileHandler extends Thread {
-
-    private ChatGUI gui;
-    private Socket client;
-    
-    public FileHandler(ChatGUI gui, Socket client) {
-        this.gui = gui;
+       private ChatGUI gui;
+       private Socket client;
+    public FileHandler( Socket client, ChatGUI gui) {
+         this.gui = gui;
         this.client = client;
     }
     
-    public void run() {
+    public void run(){
         try {
-            System.out.println("Atendiendo conexiones desde : " + client.getInetAddress());  
+            System.out.println("Atendiendo conexiones desde : " + client.getInetAddress());
             InputStream is = client.getInputStream();
             
             JFileChooser fc = new JFileChooser();
             
-            int returnVal = fc.showOpenDialog(gui);
+            int returnVal =  fc.showOpenDialog(gui);
             
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
@@ -42,20 +40,19 @@ public class FileHandler extends Thread {
                 
                 int bait;
                 
-                while( (bait = is.read()) != -1 ) {
+                while((bait = is.read()) !=-1 ){
                     fos.write(bait);
                 }
-                
                 fos.flush();
                 fos.close();
+               
+                gui.getTextAreaIncommingMsg().append("File: " +file.getName() + " Received" +"\n");
                 
-                gui.getTextAreaIncommingMsg().append("File " + file.getName() + " received " + "\n");
             }
-            
             is.close();
             client.close();
-        } catch(IOException e) {
-            System.out.println("No se pudo recibir el mensaje, mensaje exception" + e.getMessage());
+        } catch (IOException err) {
+            System.out.println("No se pudo recibir el mensaje " + err.getMessage());
         }
     }
     
