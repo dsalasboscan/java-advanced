@@ -32,6 +32,7 @@ class FileListener implements Runnable {
                 System.out.println("Aceptando conexiones");
                 Socket client = server.accept();
                 System.out.println("Nueva conexion desde: " + client.getInetAddress());
+                handle(client);
             }
             
         } catch(IOException e) {

@@ -5,18 +5,31 @@
  */
 package chatdesdecero;
 
+import java.net.InetAddress;
+import javax.swing.DefaultListModel;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author david.salas
  */
 public class ChatGUI extends javax.swing.JFrame {
 
+    private DefaultListModel<Contact> modeloContactos = new DefaultListModel();
+    
     /**
      * Creates new form ChatGUI
      */
     public ChatGUI() {
         initComponents();
+        listContactos.setModel(modeloContactos);
     }
+
+    public JTextArea getTextAreaIncommingMsg() {
+        return textIncommingArea;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,7 +57,7 @@ public class ChatGUI extends javax.swing.JFrame {
         buttonSendFile = new javax.swing.JButton();
         labelIncommingMessages = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textIncommingArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,16 +83,26 @@ public class ChatGUI extends javax.swing.JFrame {
         labelContactList.setText("Lista de contactos");
 
         buttonSend.setText("Send");
+        buttonSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSendActionPerformed(evt);
+            }
+        });
 
         buttonClear.setText("Clear");
+        buttonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonClearActionPerformed(evt);
+            }
+        });
 
         buttonSendFile.setText("Send File");
 
         labelIncommingMessages.setText("Incomming messages");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        textIncommingArea.setColumns(20);
+        textIncommingArea.setRows(5);
+        jScrollPane3.setViewportView(textIncommingArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,8 +174,7 @@ public class ChatGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(labelStatus)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(labelStatus))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -170,8 +192,31 @@ public class ChatGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAddContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddContactActionPerformed
-        
+        try {
+            Contact contact = new Contact();
+            contact.setInetAddress(InetAddress.getByName(textFieldHost.getText()));
+            contact.setPort(Integer.parseInt(textFieldPort.getText()));
+            modeloContactos.addElement(contact);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
     }//GEN-LAST:event_buttonAddContactActionPerformed
+
+    private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSendActionPerformed
+        Contact contact = listContactos.getSelectedValue();
+        
+        if (contact != null) {
+            MessageSender sender = new MessageSender(contact, labelStatus, textAreaSendMessage.getText());
+            sender.start();
+        } else {
+            labelStatus.setText("Seleccione un contacto");
+        }
+    }//GEN-LAST:event_buttonSendActionPerformed
+
+    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClearActionPerformed
+        textAreaSendMessage.setText("");
+        labelStatus.setText("Envie un mensaje...");
+    }//GEN-LAST:event_buttonClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,16 +261,16 @@ public class ChatGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelContactList;
     private javax.swing.JLabel labelHost;
     private javax.swing.JLabel labelIncommingMessages;
     private javax.swing.JLabel labelPort;
     private javax.swing.JLabel labelSendMessage;
     private javax.swing.JLabel labelStatus;
-    private javax.swing.JList<String> listContactos;
+    private javax.swing.JList<Contact> listContactos;
     private javax.swing.JTextArea textAreaSendMessage;
     private javax.swing.JTextField textFieldHost;
     private javax.swing.JTextField textFieldPort;
+    private javax.swing.JTextArea textIncommingArea;
     // End of variables declaration//GEN-END:variables
 }
