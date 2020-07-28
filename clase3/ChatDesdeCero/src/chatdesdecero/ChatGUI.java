@@ -26,6 +26,7 @@ public class ChatGUI extends javax.swing.JFrame {
     
     public ChatGUI() {
         initComponents();
+        
          contactList.setModel(modeloContactos);
         
     }
@@ -79,7 +80,7 @@ public class ChatGUI extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel1.setText("Text");
+        jLabel1.setText("......");
 
         buttonSend.setText("Send");
         buttonSend.addActionListener(new java.awt.event.ActionListener() {
