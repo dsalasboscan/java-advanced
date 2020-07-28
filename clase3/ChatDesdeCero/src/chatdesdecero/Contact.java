@@ -5,23 +5,35 @@
  */
 package chatdesdecero;
 
+import java.net.Inet4Address;
+import java.util.Objects;
+
 /**
  *
  * @author diego
  */
 class Contact {
     
+    private Inet4Address inetAddress;
     private int port;
-    private String host;
 
-    public String getHost() {
-        return host;
+    public Inet4Address getInetAddress() {
+        return inetAddress;
+    }
+
+    public void setInetAddress(Inet4Address inetAddress) {
+        this.inetAddress = inetAddress;
+    }
+    
+
+  
+  public String toString() {
+        return inetAddress.toString() + ":" + port;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + this.port;
+        int hash = 7;
         return hash;
     }
 
@@ -40,14 +52,12 @@ class Contact {
         if (this.port != other.port) {
             return false;
         }
+        if (!Objects.equals(this.inetAddress, other.inetAddress)) {
+            return false;
+        }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Contact{" + "port=" + port + '}';
-    }
-
+   
     public int getPort() {
         return port;
     }

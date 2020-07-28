@@ -5,6 +5,9 @@
  */
 package chatdesdecero;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import javax.swing.DefaultListModel;
 import javax.swing.JTextArea;
 
 
@@ -17,8 +20,14 @@ public class ChatGUI extends javax.swing.JFrame {
     /**
      * Creates new form ChatGUI
      */
+    
+    private DefaultListModel<Contact> modeloContactos = new DefaultListModel();
+   
+    
     public ChatGUI() {
         initComponents();
+         contactList.setModel(modeloContactos);
+        
     }
 
     public JTextArea getjTextArea1() {
@@ -73,6 +82,11 @@ public class ChatGUI extends javax.swing.JFrame {
         jLabel1.setText("Text");
 
         buttonSend.setText("Send");
+        buttonSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSendActionPerformed(evt);
+            }
+        });
 
         buttonSendFile.setText("Send File");
 
@@ -186,8 +200,24 @@ public class ChatGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAddContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddContactActionPerformed
-                // TODO add your handling code here:
+        try {
+            Contact contact = new Contact();
+            contact.setInetAddress((Inet4Address) InetAddress.getByName(textFieldHost.getText()));
+            contact.setPort(Integer.parseInt(TextfieldPort.getText()));
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_buttonAddContactActionPerformed
+
+    private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSendActionPerformed
+         Contact contact = contactList.getSelectedValue();
+        
+        if (contact != null) {
+            MessageSender sender = new MessageSender(contact , labelStatus,textAreaIncommingMsg.getText());
+            sender.start();
+        } else {
+            labelStatus.setText("Seleccione un contacto");
+        }
+    }//GEN-LAST:event_buttonSendActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,7 +261,7 @@ public class ChatGUI extends javax.swing.JFrame {
     private javax.swing.JButton buttonClear;
     private javax.swing.JButton buttonSend;
     private javax.swing.JButton buttonSendFile;
-    private javax.swing.JList<String> contactList;
+    private javax.swing.JList<Contact> contactList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
